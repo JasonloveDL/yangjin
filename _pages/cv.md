@@ -352,90 +352,138 @@ h1:empty {
   .skills-grid {
     grid-template-columns: 1fr;
   }
+  
+  /* 确保侧边栏在移动端有足够的高度 */
+  .sidebar {
+    min-height: auto !important;
+  }
 }
 
 /* 侧边栏线性响应式设计 */
 .author__avatar {
-  /* 线性变化：从150px到60px */
-  max-width: clamp(60px, 15vw, 150px) !important;
+  /* 线性变化：从150px到100px，进一步增大最小尺寸 */
+  max-width: clamp(100px, 18vw, 150px) !important;
   transition: all 0.3s ease;
 }
 
 .author__name {
-  /* 字体线性变化：从1.5rem到1rem */
-  font-size: clamp(1rem, 2.5vw, 1.5rem) !important;
+  /* 字体线性变化：从1.5rem到1.1rem，增大最小字体 */
+  font-size: clamp(1.1rem, 2.8vw, 1.5rem) !important;
   transition: all 0.3s ease;
+  line-height: 1.3 !important;
 }
 
 .author__urls li {
-  /* 联系方式字体线性变化 */
-  font-size: clamp(0.75rem, 2vw, 0.9rem) !important;
+  /* 联系方式字体线性变化：增大最小字体 */
+  font-size: clamp(0.85rem, 2.2vw, 0.9rem) !important;
   transition: all 0.3s ease;
+  line-height: 1.4 !important;
 }
 
 /* 平板和大屏手机布局 */
 @media (max-width: 768px) and (min-width: 481px) {
+  .sidebar {
+    padding: 2rem 1.5rem !important;
+  }
+  
   .author__content {
     text-align: center;
   }
   
   .author__avatar {
-    margin: 0 auto 1rem auto;
+    margin: 0 auto 1.8rem auto;
+    max-width: clamp(130px, 22vw, 170px) !important; /* 进一步增大平板端头像 */
+    border-radius: 50%;
+  }
+  
+  .author__name {
+    font-size: clamp(1.5rem, 3.5vw, 1.8rem) !important; /* 进一步增大平板端名字字体 */
+    margin-bottom: 1.2rem;
+    font-weight: 700;
+    color: #2C3E50 !important;
   }
   
   .author__urls {
     justify-content: center;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 1.2rem;
   }
   
   .author__urls li {
-    margin: 0.25rem 0;
+    margin: 0.5rem 0;
+    font-size: clamp(1rem, 2.8vw, 1.2rem) !important; /* 进一步增大联系方式字体 */
+    color: #34495E !important;
+  }
+  
+  .author__urls li a {
+    color: #2C3E50 !important;
+    text-decoration: none;
+  }
+  
+  .author__urls li a:hover {
+    color: #3498DB !important;
   }
 }
 
 /* 很窄屏幕布局：左右排列 */
 @media (max-width: 480px) {
   .sidebar {
-    padding: 1rem 0.5rem !important;
+    padding: 2rem 1.2rem !important; /* 进一步增大内边距 */
   }
   
   .author__avatar {
     margin: 0 !important;
     float: left;
-    max-width: clamp(50px, 12vw, 80px) !important;
+    max-width: clamp(110px, 25vw, 140px) !important; /* 进一步显著增大头像尺寸 */
+    border-radius: 50%; /* 确保头像为圆形 */
   }
   
   .author__content {
-    margin-left: calc(clamp(50px, 12vw, 80px) + 1rem);
+    margin-left: calc(clamp(110px, 25vw, 140px) + 1.8rem); /* 调整左边距 */
     text-align: left;
-    min-height: clamp(50px, 12vw, 80px);
+    min-height: clamp(140px, 30vw, 180px); /* 进一步增加容器高度 */
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start; /* 顶部对齐 */
+    padding-top: 0.8rem; /* 增加顶部内边距 */
   }
   
   .author__name {
-    font-size: clamp(0.9rem, 3vw, 1.2rem) !important;
-    margin-bottom: 0.25rem;
-    line-height: 1.2;
+    font-size: clamp(1.3rem, 4.5vw, 1.7rem) !important; /* 进一步增大名字字体 */
+    margin-bottom: 0.8rem;
+    line-height: 1.1;
+    font-weight: 700;
+    color: #2C3E50 !important; /* 添加颜色以增强可读性 */
   }
   
   .author__urls-wrapper {
-    margin-top: 0.25rem;
+    margin-top: 0.6rem;
+    flex: 1;
   }
   
   .author__urls {
     margin: 0;
     padding: 0;
     flex-direction: column;
-    gap: 0.125rem;
+    gap: 0.6rem; /* 进一步增加行间距 */
   }
   
   .author__urls li {
     margin: 0;
-    font-size: clamp(0.7rem, 2.2vw, 0.85rem) !important;
-    line-height: 1.3;
+    font-size: clamp(0.9rem, 3.2vw, 1.1rem) !important; /* 进一步增大联系方式字体 */
+    line-height: 1.4;
+    white-space: nowrap;
+    overflow: visible;
+    color: #34495E !important; /* 添加颜色 */
+  }
+  
+  .author__urls li a {
+    color: #2C3E50 !important; /* 链接颜色 */
+    text-decoration: none;
+  }
+  
+  .author__urls li a:hover {
+    color: #3498DB !important; /* 悬停颜色 */
   }
   
   /* 清除浮动 */
