@@ -1,0 +1,46 @@
+# Ignore the contents of the _site directory and other cache directories
+_site/
+.sass-cache/
+
+# Ignore the directory for local files during development
+local/
+
+# Ignore the Gemfile that is generated
+Gemfile.lock
+
+# Ignore files created by npm
+node_modules
+package-lock.json
+
+# Ignore the vendor file at root level and bundle for alternative installation
+/vendor/
+.bundle/
+
+# Ignore folders related to IDEs
+.vscode/
+
+# 不需要部署的目录和文件
+_drafts/
+_posts/
+_portfolio/
+_talks/
+_teaching/
+markdown_generator/
+scripts/
+talkmap.ipynb
+talkmap.py
+talkmap/
+talkmap_out.ipynb
+
+# Docker相关文件
+Dockerfile
+docker-compose.yaml
+.devcontainer/
+
+# 前端构建相关（如果不需要）
+package.json
+package-lock.json
+
+# 项目文档（可选，但通常不需要部署）
+README.md
+CONTRIBUTING.md
