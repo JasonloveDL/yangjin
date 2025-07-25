@@ -492,7 +492,7 @@ h1:empty {
       <div class="pub-content">
         <div class="pub-text"><strong>Jin Yang</strong>, Guangxin Jiang, Yinan Wang, Ying Chen* (2024) An Intelligent End-to-End Neural Architecture Search Framework for Electricity Forecasting Model Development. <em><u>INFORMS Journal on Computing</u></em>, 37(2):480-501. <span class="utd-badge">(UTD24)</span></div>
         <div class="pub-links">
-          <a href="/files/Yang et al_2024_An Intelligent End-to-End Neural Architecture Search Framework for Electricity.pdf" target="_blank" title="下载PDF">📄</a>
+          <a href="{{ '/files/Yang et al_2024_An Intelligent End-to-End Neural Architecture Search Framework for Electricity.pdf' | relative_url }}" target="_blank" title="下载PDF">📄</a>
           <a href="https://doi.org/10.1287/ijoc.2023.0034" target="_blank" title="DOI链接">🔗</a>
         </div>
       </div>
@@ -503,7 +503,7 @@ h1:empty {
       <div class="pub-content">
         <div class="pub-text">Xiaojian Wang, Yinan Wang, <strong>Jin Yang</strong>, Ying Chen* (2024) Smartformer: An Intelligent Transformer Compression Framework for Time-Series Modeling. <em><u>IISE Transactions</u></em>, 1-14.</div>
         <div class="pub-links">
-          <a href="/files/Smartformer An intelligent transformer compression framework for time-series modeling.pdf" target="_blank" title="下载PDF">📄</a>
+          <a href="{{ '/files/Smartformer An intelligent transformer compression framework for time-series modeling.pdf' | relative_url }}" target="_blank" title="下载PDF">📄</a>
           <a href="https://doi.org/10.1080/24725854.2024.2376645" target="_blank" title="DOI链接">🔗</a>
         </div>
       </div>
@@ -514,7 +514,7 @@ h1:empty {
       <div class="pub-content">
         <div class="pub-text">Jiancheng Qin, <strong>Jin Yang</strong>, Ying Chen*, Qiang Ye, Hua Li. (2021). Two‐stage short‐term wind power forecasting algorithm using different feature-learning models. <em><u>Fundamental Research</u></em>, 1(4), 472–481.</div>
         <div class="pub-links">
-          <a href="/files/Two-stage-short-term-wind-power-forecasting-algorithm-usin_2021_Fundamental-.pdf" target="_blank" title="下载PDF">📄</a>
+          <a href="{{ '/files/Two-stage-short-term-wind-power-forecasting-algorithm-usin_2021_Fundamental-.pdf' | relative_url }}" target="_blank" title="下载PDF">📄</a>
           <a href="https://doi.org/10.1016/j.fmre.2021.06.010" target="_blank" title="DOI链接">🔗</a>
         </div>
       </div>
@@ -525,7 +525,7 @@ h1:empty {
       <div class="pub-content">
         <div class="pub-text">Tao Huo, <strong>Jin Yang</strong>, Chengfei Yue, Xueqin Chen, Xibin Cao (2024) Gradient-based Attitude Planning for Rigid Spacecraft on SO(3). <em><u>Science China-Technological Sciences</u></em>, 68(5): 1520401.</div>
         <div class="pub-links">
-          <a href="/files/s11431-024-2883-1.pdf" target="_blank" title="下载PDF">📄</a>
+          <a href="{{ '/files/s11431-024-2883-1.pdf' | relative_url }}" target="_blank" title="下载PDF">📄</a>
           <a href="https://doi.org/10.1007/s11431-024-2883-1" target="_blank" title="DOI链接">🔗</a>
         </div>
       </div>
@@ -718,7 +718,7 @@ h1:empty {
 <!-- PDF下载按钮 -->
 <div style="text-align: center; margin: 3rem 0;">
   <div style="text-align: center; display: flex; gap: 1rem; justify-content: center;">
-    <a href="/files/2025杨晋.pdf" download="2025杨晋_简历.pdf" style="background: linear-gradient(45deg, #2C3E50, #34495E); color: white; border: none; padding: 1rem 2rem; border-radius: 10px; font-size: 1.1rem; font-weight: bold; cursor: pointer; box-shadow: 0 3px 10px rgba(44, 62, 80, 0.3); transition: transform 0.3s ease; text-decoration: none; display: inline-block;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+    <a href="{{ '/files/2025杨晋.pdf' | relative_url }}" download="2025杨晋_简历.pdf" style="background: linear-gradient(45deg, #2C3E50, #34495E); color: white; border: none; padding: 1rem 2rem; border-radius: 10px; font-size: 1.1rem; font-weight: bold; cursor: pointer; box-shadow: 0 3px 10px rgba(44, 62, 80, 0.3); transition: transform 0.3s ease; text-decoration: none; display: inline-block;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
       下载PDF简历
     </a>
   </div>
