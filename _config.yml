@@ -13,7 +13,7 @@ title                    : "杨晋 - 哈尔滨工业大学博士生"
 title_separator          : "|"
 name                     : &name "杨晋"
 description              : &description "哈尔滨工业大学博士生 | UTD24期刊第一作者 | 国家奖学金获得者 | 管理科学与工程×人工智能"
-url                      : https://jasonlovedl.github.io/yangjin
+url                      : https://jasonlovedl.github.io
 baseurl                  : "/yangjin" # the subpath of your site, e.g. "/blog"
 repository               : "JasonloveDL/yangjin"
 
