@@ -333,6 +333,49 @@ h1:empty {
   font-size: 0.8rem;
 }
 
+/* 桌面端优化设计 */
+@media (min-width: 1024px) {
+  .sidebar {
+    margin: 0 !important;
+    border-radius: 0 15px 15px 0 !important;
+    padding: 2.5rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  
+  .author__avatar {
+    margin: 0 auto 1.2rem auto !important; /* 减少底部间距 */
+    width: clamp(160px, 18vw, 200px) !important;
+  }
+  
+  .author__content {
+    text-align: center !important;
+    margin: 0 !important; /* 移除margin */
+  }
+  
+  .author__name {
+    font-size: 1.8rem !important;
+    margin: 0 !important; /* 移除所有margin */
+    text-align: center !important;
+    padding: 0 !important;
+  }
+  
+  .author__urls {
+    gap: 1rem !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  
+  .author__urls li {
+    font-size: 1rem !important;
+    text-align: center !important;
+    min-width: 200px !important;
+    padding: 0.8rem 1.2rem !important;
+    border-radius: 25px !important;
+  }
+}
+
 /* 响应式设计 */
 @media (max-width: 768px) {
   .hero-section {
@@ -352,145 +395,263 @@ h1:empty {
   .skills-grid {
     grid-template-columns: 1fr;
   }
-  
-  /* 确保侧边栏在移动端有足够的高度 */
-  .sidebar {
-    min-height: auto !important;
-  }
 }
 
-/* 侧边栏线性响应式设计 */
+/* 修复侧边栏在所有设备上的显示问题 */
+.sidebar .author__urls {
+  display: block !important;
+  position: relative !important;
+  margin: 1rem 0 0 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  z-index: auto !important;
+}
+
+.sidebar .author__urls:before,
+.sidebar .author__urls:after {
+  display: none !important;
+}
+
+/* 美化侧边栏整体设计 */
+.sidebar {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%) !important;
+  border-radius: 15px !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1) !important;
+  overflow: visible !important; /* 改为visible以避免裁剪 */
+  padding: 2rem 1.5rem !important;
+}
+
+/* 重新设计作者档案的布局结构 */
+.sidebar .author__profile,
+.sidebar > div:first-child {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  gap: 0.8rem !important; /* 减少整体间距 */
+}
+
+/* 确保所有屏幕尺寸下的居中布局 */
+.sidebar .author__avatar,
+.sidebar .author__content,
+.sidebar .author__urls-wrapper {
+  text-align: center !important;
+  align-self: center !important;
+}
+
+.author__avatar img {
+  border: 4px solid white !important;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2) !important;
+  transition: transform 0.3s ease !important;
+}
+
+.author__avatar img:hover {
+  transform: scale(1.05) !important;
+}
+
+.author__name {
+  color: #2C3E50 !important;
+  font-weight: 700 !important;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.1) !important;
+}
+
+.author__urls li {
+  background: rgba(255,255,255,0.8) !important;
+  margin-bottom: 0.5rem !important;
+  padding: 0.8rem 1rem !important;
+  border-radius: 25px !important;
+  transition: all 0.3s ease !important;
+  border: 1px solid rgba(44, 62, 80, 0.1) !important;
+}
+
+.author__urls li:hover {
+  background: rgba(255,255,255,1) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+}
+
+.author__urls li i {
+  color: #3498DB !important;
+  margin-right: 0.8rem !important;
+  font-size: 1.1rem !important;
+}
+
+.author__urls li a {
+  color: #2C3E50 !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+}
+
+.author__urls li a:hover {
+  color: #3498DB !important;
+}
+
+/* 彻底重写头像样式，覆盖原始限制 */
 .author__avatar {
-  /* 线性变化：从150px到100px，进一步增大最小尺寸 */
-  max-width: clamp(100px, 18vw, 150px) !important;
+  /* 完全覆盖原始样式 */
+  display: block !important;
+  width: auto !important;
+  height: auto !important;
+  max-width: none !important;
+  /* 线性变化：从200px到120px，大幅增大尺寸 */
+  width: clamp(120px, 25vw, 200px) !important;
   transition: all 0.3s ease;
+  margin: 0 auto !important;
+  text-align: center !important;
+}
+
+.author__avatar img {
+  /* 确保图片填满容器 */
+  width: 100% !important;
+  height: auto !important;
+  max-width: none !important;
+  border-radius: 50% !important;
 }
 
 .author__name {
   /* 字体线性变化：从1.5rem到1.1rem，增大最小字体 */
   font-size: clamp(1.1rem, 2.8vw, 1.5rem) !important;
   transition: all 0.3s ease;
-  line-height: 1.3 !important;
+  line-height: 1.2 !important;
+  margin: 0 !important; /* 移除默认margin */
+  padding: 0 !important; /* 移除默认padding */
 }
 
 .author__urls li {
-  /* 联系方式字体线性变化：增大最小字体 */
   font-size: clamp(0.85rem, 2.2vw, 0.9rem) !important;
   transition: all 0.3s ease;
   line-height: 1.4 !important;
+  white-space: normal !important;
 }
 
-/* 平板和大屏手机布局 */
+/* 平板端优化设计 */
 @media (max-width: 768px) and (min-width: 481px) {
   .sidebar {
-    padding: 2rem 1.5rem !important;
+    margin: 1rem !important;
+    padding: 2.5rem 2rem !important;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%) !important;
   }
   
   .author__content {
-    text-align: center;
+    text-align: center !important;
   }
   
   .author__avatar {
-    margin: 0 auto 1.8rem auto;
-    max-width: clamp(130px, 22vw, 170px) !important; /* 进一步增大平板端头像 */
-    border-radius: 50%;
+    margin: 0 auto 1rem auto !important; /* 减少底部间距 */
+    max-width: clamp(140px, 24vw, 180px) !important;
+    display: block !important;
   }
   
   .author__name {
-    font-size: clamp(1.5rem, 3.5vw, 1.8rem) !important; /* 进一步增大平板端名字字体 */
-    margin-bottom: 1.2rem;
-    font-weight: 700;
-    color: #2C3E50 !important;
-  }
-  
-  .author__urls {
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1.2rem;
-  }
-  
-  .author__urls li {
-    margin: 0.5rem 0;
-    font-size: clamp(1rem, 2.8vw, 1.2rem) !important; /* 进一步增大联系方式字体 */
-    color: #34495E !important;
-  }
-  
-  .author__urls li a {
-    color: #2C3E50 !important;
-    text-decoration: none;
-  }
-  
-  .author__urls li a:hover {
-    color: #3498DB !important;
-  }
-}
-
-/* 很窄屏幕布局：左右排列 */
-@media (max-width: 480px) {
-  .sidebar {
-    padding: 2rem 1.2rem !important; /* 进一步增大内边距 */
-  }
-  
-  .author__avatar {
-    margin: 0 !important;
-    float: left;
-    max-width: clamp(110px, 25vw, 140px) !important; /* 进一步显著增大头像尺寸 */
-    border-radius: 50%; /* 确保头像为圆形 */
-  }
-  
-  .author__content {
-    margin-left: calc(clamp(110px, 25vw, 140px) + 1.8rem); /* 调整左边距 */
-    text-align: left;
-    min-height: clamp(140px, 30vw, 180px); /* 进一步增加容器高度 */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; /* 顶部对齐 */
-    padding-top: 0.8rem; /* 增加顶部内边距 */
-  }
-  
-  .author__name {
-    font-size: clamp(1.3rem, 4.5vw, 1.7rem) !important; /* 进一步增大名字字体 */
-    margin-bottom: 0.8rem;
-    line-height: 1.1;
-    font-weight: 700;
-    color: #2C3E50 !important; /* 添加颜色以增强可读性 */
+    font-size: clamp(1.6rem, 4vw, 2rem) !important;
+    margin: 0 !important; /* 移除所有margin */
+    text-align: center !important;
+    padding: 0 !important;
   }
   
   .author__urls-wrapper {
-    margin-top: 0.6rem;
-    flex: 1;
+    text-align: center !important;
   }
   
   .author__urls {
-    margin: 0;
-    padding: 0;
-    flex-direction: column;
-    gap: 0.6rem; /* 进一步增加行间距 */
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: 1rem !important;
+    align-items: center !important;
   }
   
   .author__urls li {
-    margin: 0;
-    font-size: clamp(0.9rem, 3.2vw, 1.1rem) !important; /* 进一步增大联系方式字体 */
-    line-height: 1.4;
-    white-space: nowrap;
-    overflow: visible;
-    color: #34495E !important; /* 添加颜色 */
+    font-size: clamp(1.05rem, 3vw, 1.25rem) !important;
+    margin: 0.5rem !important;
+    min-width: 240px !important;
+    text-align: center !important;
+    padding: 1rem 1.5rem !important;
+    border-radius: 25px !important;
+    background: rgba(255,255,255,0.9) !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08) !important;
+  }
+}
+
+/* 手机端优化设计 */
+@media (max-width: 480px) {
+  .sidebar {
+    margin: 1rem !important;
+    padding: 3rem 2rem !important; /* 增加padding为头像留出更多空间 */
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%) !important;
+    min-height: auto !important;
+    overflow: visible !important;
   }
   
-  .author__urls li a {
-    color: #2C3E50 !important; /* 链接颜色 */
-    text-decoration: none;
+  .author__avatar {
+    /* 手机端头像进一步放大 */
+    width: clamp(180px, 40vw, 220px) !important;
+    margin: 0 auto 1rem auto !important; /* 减少底部间距 */
+    float: none !important;
+    display: block !important;
+    text-align: center !important;
+    position: relative !important;
   }
   
-  .author__urls li a:hover {
-    color: #3498DB !important; /* 悬停颜色 */
+  .author__avatar img {
+    width: 100% !important;
+    height: auto !important;
+    border: 5px solid white !important;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25) !important;
+  }
+  
+  .author__content {
+    margin-left: 0 !important;
+    text-align: center !important;
+    min-height: auto !important;
+    display: block !important;
+    padding-top: 0 !important;
+  }
+  
+  .author__name {
+    font-size: clamp(1.4rem, 5vw, 1.8rem) !important;
+    margin: 0 !important; /* 移除所有margin */
+    line-height: 1.2 !important;
+    text-align: center !important;
+    padding: 0 !important; /* 移除padding */
+  }
+  
+  .author__urls-wrapper {
+    margin-top: 0 !important;
+    text-align: center !important;
+  }
+  
+  .author__urls {
+    margin: 0 !important;
+    padding: 0 !important;
+    flex-direction: column !important;
+    gap: 0.8rem !important;
+    align-items: center !important;
+  }
+  
+  .author__urls li {
+    font-size: clamp(1.0rem, 3.8vw, 1.2rem) !important;
+    line-height: 1.5 !important;
+    white-space: nowrap !important;
+    text-align: center !important;
+    max-width: 90% !important;
+    padding: 1rem 1.5rem !important;
+    margin: 0.8rem 0 !important;
+    border-radius: 30px !important;
+    background: rgba(255,255,255,0.95) !important;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.1) !important;
+  }
+  
+  .author__urls li i {
+    color: #3498DB !important;
+    margin-right: 1rem !important;
+    font-size: 1.2rem !important;
   }
   
   /* 清除浮动 */
   .author__urls-wrapper::after {
-    content: "";
-    display: table;
-    clear: both;
+    display: none !important;
   }
 }
 
@@ -773,6 +934,105 @@ h1:empty {
 </div>
 
 ---
+
+<script>
+// 复制手机号码功能
+function copyPhoneNumber(phoneNumber) {
+  // 使用现代浏览器的clipboard API
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(phoneNumber).then(function() {
+      showCopyMessage('手机号码已复制到剪贴板：' + phoneNumber);
+    }).catch(function(err) {
+      console.error('复制失败：', err);
+      fallbackCopyTextToClipboard(phoneNumber);
+    });
+  } else {
+    // 降级方案
+    fallbackCopyTextToClipboard(phoneNumber);
+  }
+}
+
+// 降级复制方案
+function fallbackCopyTextToClipboard(text) {
+  var textArea = document.createElement("textarea");
+  textArea.value = text;
+  
+  // 避免滚动到底部
+  textArea.style.position = "fixed";
+  textArea.style.top = "0";
+  textArea.style.left = "0";
+  textArea.style.width = "2em";
+  textArea.style.height = "2em";
+  textArea.style.padding = "0";
+  textArea.style.border = "none";
+  textArea.style.outline = "none";
+  textArea.style.boxShadow = "none";
+  textArea.style.background = "transparent";
+  
+  document.body.appendChild(textArea);
+  textArea.focus();
+  textArea.select();
+  
+  try {
+    var successful = document.execCommand('copy');
+    if (successful) {
+      showCopyMessage('手机号码已复制到剪贴板：' + text);
+    } else {
+      showCopyMessage('复制失败，请手动复制：' + text);
+    }
+  } catch (err) {
+    console.error('降级复制也失败了：', err);
+    showCopyMessage('复制失败，请手动复制：' + text);
+  }
+  
+  document.body.removeChild(textArea);
+}
+
+// 显示复制成功消息
+function showCopyMessage(message) {
+  // 创建提示框
+  var messageDiv = document.createElement('div');
+  messageDiv.textContent = message;
+  messageDiv.style.cssText = `
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #2C3E50;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    z-index: 10000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    animation: fadeInOut 3s ease-in-out;
+  `;
+  
+  // 添加动画样式
+  if (!document.getElementById('copy-message-style')) {
+    var style = document.createElement('style');
+    style.id = 'copy-message-style';
+    style.textContent = `
+      @keyframes fadeInOut {
+        0% { opacity: 0; transform: translateX(-50%) translateY(-10px); }
+        15% { opacity: 1; transform: translateX(-50%) translateY(0); }
+        85% { opacity: 1; transform: translateX(-50%) translateY(0); }
+        100% { opacity: 0; transform: translateX(-50%) translateY(-10px); }
+      }
+    `;
+    document.head.appendChild(style);
+  }
+  
+  document.body.appendChild(messageDiv);
+  
+  // 3秒后移除提示框
+  setTimeout(function() {
+    if (messageDiv.parentNode) {
+      messageDiv.parentNode.removeChild(messageDiv);
+    }
+  }, 3000);
+}
+</script>
 
 <div style="text-align: center; color: #7f8c8d; font-size: 0.9rem; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #ECF0F1;">
   <p><strong>杨晋</strong> | 哈尔滨工业大学博士生 | 管理科学与工程、人工智能交叉研究 | 更新于2025年7月</p>
