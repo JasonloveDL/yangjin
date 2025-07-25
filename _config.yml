@@ -15,7 +15,7 @@ name                     : &name "杨晋"
 description              : &description "哈尔滨工业大学博士生 | UTD24期刊第一作者 | 国家奖学金获得者 | 管理科学与工程×人工智能"
 url                      : https://jasonlovedl.github.io
 baseurl                  : "/yangjin" # the subpath of your site, e.g. "/blog"
-repository               : "JasonloveDL/yangjin"
+repository               : "JasonloveDL"
 
 # Site Author - The following control what appear as part of the author content on the side bar.
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.

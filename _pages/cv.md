@@ -5,7 +5,6 @@ permalink: /cv/
 author_profile: true
 redirect_from:
   - /resume
-  - /
 ---
 
 <link rel="stylesheet" href="{{ '/assets/css/cv-enhancement.css' | relative_url }}">
